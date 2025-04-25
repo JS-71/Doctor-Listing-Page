@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctors List</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border: 1px solid #dee2e6;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .doctor-img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .book-btn {
+      border-radius: 50px;
+    }
+    .sidebar {
+      background: white;
+      padding: 20px;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+    .search-bar {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+    .search-bar input {
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+    .search-bar i {
+      color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+
+    <div class="row">
+        <div class="col-md-3 col-12">
+            <div class="card p-3">
+                <h4>Filters</h4>
+                <h5>Sort By</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sort-by" value="None" id="sort-none">
+                    <label class="form-check-label" for="sort-none">None</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sort-by" value="fees" id="sort-fees">
+                    <label class="form-check-label" for="sort-fees">Fees (Low to High)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="sort-by" value="experience" id="sort-experience">
+                    <label class="form-check-label" for="sort-experience">Experience - Most Experienced First</label>
+                </div>
+                <hr>
+                <h5>Specialties</h5>
+                <div id="specialties-container">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Dentist" id="dentist">
+                        <label class="form-check-label" for="dentist">Dentist</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Dermatologist" id="dermatologist">
+                        <label class="form-check-label" for="dermatologist">Dermatologist</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Anesthesist" id="anesthesist">
+                        <label class="form-check-label" for="anesthesist">Anesthesist</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Neurosurgeon" id="neurosurgeon">
+                        <label class="form-check-label" for="neurosurgeon">Neurosurgeon</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Cardiologist" id="cardiologist">
+                        <label class="form-check-label" for="cardiologist">Cardiologist</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specialty" value="Gynecology" id="gynecology">
+                        <label class="form-check-label" for="gynecology">Gynecology</label>
+                    </div>
+                </div>
+                <hr>
+                
+                <h5>Mode of Consultation</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="consultation" value="Video Consult" id="video">
+                    <label class="form-check-label" for="video">Video Consult</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="consultation" value="In Clinic" id="clinic">
+                    <label class="form-check-label" for="clinic">In Clinic</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="consultation" value="All" id="all">
+                    <label class="form-check-label" for="all">All</label>
+                </div>
+            </div>
+        </div>
+    
+    
+
+
+    <div class="col-md-9">
+
+      <div class="search-bar d-flex align-items-center">
+        <i class="bi bi-search me-2"></i>
+        <input type="text" class="form-control" placeholder="Search doctors">
+      </div>
+
+      <!-- Doctors List -->
+      <div class="row g-3">
+        
+        <!-- Doctor Card -->
+        <div class="col-md-12">
+          <div class="card p-3 d-flex flex-row align-items-center">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Doctor" class="doctor-img me-4">
+            <div class="flex-grow-1">
+              <h5 class="mb-1">Dr. Annie</h5>
+              <p class="mb-1 text-muted">Heart Surgeon - Chennai, Tamilnadu</p>
+              <p class="mb-1"><i class="bi bi-hospital me-1"></i> MBBS, MD - Cardiology</p>
+              <p class="mb-0"><i class="bi bi-currency-dollar me-1"></i>400 <span class="ms-3"><i class="bi bi-calendar-check me-1"></i>Available on Fri, 22 March</span></p>
+            </div>
+            <div>
+              <button class="btn btn-outline-primary book-btn">Book Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+            <div class="card p-3 d-flex flex-row align-items-center">
+              <img src="data:image/jpeg;base64,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" alt="Doctor" class="doctor-img me-4">
+              <div class="flex-grow-1">
+                <h5 class="mb-1">Dr. Divya</h5>
+                <p class="mb-1 text-muted">dermatologist - Vizag, Andra Pradesh</p>
+                <p class="mb-1"><i class="bi bi-hospital me-1"></i> MBBS, MD - Dermatology</p>
+                <p class="mb-0"><i class="bi bi-currency-dollar me-1"></i>400 <span class="ms-3"><i class="bi bi-calendar-check me-1"></i>Available on sun, 24 March</span></p>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary book-btn">Book Now</button>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-12">
+          <div class="card p-3 d-flex flex-row align-items-center">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor" class="doctor-img me-4">
+            <div class="flex-grow-1">
+              <h5 class="mb-1">Dr. David</h5>
+              <p class="mb-1 text-muted">Neurologist - Bangalore, Karnataka</p>
+              <p class="mb-1"><i class="bi bi-hospital me-1"></i> MBBS, MD - Neurology</p>
+              <p class="mb-0"><i class="bi bi-currency-dollar me-1"></i>500 <span class="ms-3"><i class="bi bi-calendar-check me-1"></i>Available on Mon, 25 March</span></p>
+            </div>
+            <div>
+              <button class="btn btn-outline-primary book-btn">Book Now</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
